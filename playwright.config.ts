@@ -15,7 +15,7 @@ import os from 'os';
  * To run against the local environment, set the URL to your local server like 'https://localhost:9002'
  * You can override the BASE_URL by setting the URL environment variable in .env file or passing it as a command line argument.
  */
-export const BASE_URL = process.env.URL || 'https://personas.test.oka.com.pe/';
+export const BASE_URL = process.env.URL || 'https://personas.dev.oka.com.pe/';
 export const STORAGE_STATE_PATH = path.join(__dirname, 'playwright/.auth');
 const customLoggerPath = require.resolve('vasu-playwright-utils/custom-logger');
 // export const EMPTY_STORAGE_STATE = path.join(__dirname, './tests/testdata/empty-storage-state.json');
@@ -120,30 +120,26 @@ export default defineConfig({
           // args: ["--auto-open-devtools-for-tabs"],
           // channel: 'chrome',
           slowMo: 0,
-          headless: false,
-        },
-      },
-    },
-
-    {
-      name: 'chromiumheadless',
-      dependencies: ['setup'],
-      use: {
-        ...devices['Desktop Chrome'],
-        viewport: { width: 1600, height: 1000 },
-        // storageState: STORAGE_STATE_LOGIN,
-        launchOptions: {
-          args: ['--disable-web-security'],
-          // channel: 'chrome',
-          slowMo: 0,
           headless: true,
         },
       },
     },
-    {
-      name: 'chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    },
+    //
+    // {
+    //   name: 'chromiumheadless',
+    //   dependencies: ['setup'],
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     viewport: { width: 1600, height: 1000 },
+    //     // storageState: STORAGE_STATE_LOGIN,
+    //     launchOptions: {
+    //       args: ['--disable-web-security'],
+    //       // channel: 'chrome',
+    //       slowMo: 0,
+    //       headless: true,
+    //     },
+    //   },
+    // },
 
     /******* Uncomment to run tests in other browsers
 

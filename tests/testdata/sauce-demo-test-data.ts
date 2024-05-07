@@ -1,21 +1,19 @@
+export const getRandomNumber = () => {
+  const randomEightDigitNumber = Math.floor(Math.random() * 900000000) + 100000000;
+
+  const nineDigitNumber = '9' + randomEightDigitNumber.toString().substring(1);
+
+  return parseInt(nineDigitNumber, 10).toString();
+};
+
 export interface User {
   username: string;
   password: string;
 }
 
 export const standardUserCredentials: User = {
-  username: 'standard_user',
+  username: getRandomNumber(),
   password: 'secret_sauce',
 };
 
-export const visualTestUserCredentials: User = {
-  username: 'visual_user',
-  password: 'secret_sauce',
-};
-
-export const invalidUserCredentials: User = {
-  username: 'invalid_user',
-  password: 'invalid_password',
-};
-
-export const validUsers: User[] = [standardUserCredentials, visualTestUserCredentials];
+export const validUsers: User[] = [standardUserCredentials];
