@@ -56,7 +56,8 @@
   "lint-staged": {
     "{*.ts,.eslintrc.js}": [
       "cross-env eslint --fix",
-      "cross-env prettier --write"
+      "cross-env prettier --write",
+      "cross-env rimraf dist playwright-report test-results"
     ]
   },
   "devDependencies": {
