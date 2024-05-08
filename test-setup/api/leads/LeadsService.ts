@@ -5,6 +5,7 @@ import { leadsRepository } from '../index';
 class LeadsService {
   async createLead(lead: Lead): Promise<void> {
     const { type: documentType, number: documentNumber } = lead.customer.identityDocument;
+    await this.removeLead(documentType, documentNumber);
     await leadsRepository.create(lead);
     const response = await this.searchLeads(documentType, documentNumber);
     expect(response.statusCode).toBe(200);
@@ -24,6 +25,21 @@ class LeadsService {
       isActive: true,
     };
     return leadsRepository.findByIdentityDocument(request);
+  }
+
+  async removeLead(documentType: string, documentNumber: string): Promise<void> {
+    try {
+      await leadsRepository.deleteByIdentityDocument({
+        customer: {
+          identityDocument: {
+            type: documentType,
+            number: documentNumber,
+          },
+        },
+      });
+    } catch {
+      /* empty */
+    }
   }
 }
 

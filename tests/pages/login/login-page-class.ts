@@ -24,6 +24,6 @@ export class LoginPage {
     await fill(this.password, 'Done@123');
     await clickAndNavigate(this.loginButton());
 
-    await expectElementToBeVisible(getLocatorByText(`¡Bienvenido ${validCredentials}!`, { exact: true }));
+    await expectElementToBeVisible(getLocatorByText(`¡Bienvenido ${validCredentials.name}!`, { exact: true }));
   }
 }

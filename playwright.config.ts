@@ -6,11 +6,8 @@
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ACTION_TIMEOUT, EXPECT_TIMEOUT, NAVIGATION_TIMEOUT, TEST_TIMEOUT } from 'vasu-playwright-utils';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig, devices } from '@playwright/test';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import dotenv from 'dotenv';
-
 import os from 'os';
 import path from 'path';
 
@@ -98,50 +95,41 @@ export default defineConfig({
    * See https://playwright.dev/docs/test-configuration#projects
    */
   projects: [
+    /** Due to different view ports in Head and Headless, created 2 projects one for head mode and the same browser for headless. */
     {
-      name: 'setup',
-      testMatch: '**/login-storage-setup.ts',
+      name: 'chromium_headless_desktop',
+      // dependencies: ['setup'],
       use: {
         ...devices['Desktop Chrome'],
         viewport: { width: 1600, height: 1000 },
-        launchOptions: {
-          args: ['--disable-web-security'],
-          slowMo: 0,
-        },
-      },
-    },
-
-    /** Due to different view ports in Head and Headless, created 2 projects one for head mode and the same browser for headless. */
-    {
-      name: 'chromium',
-      dependencies: ['setup'],
-      use: {
-        viewport: null,
-        // Set the storage state here if you have only one user to login.
         // storageState: STORAGE_STATE_LOGIN,
         launchOptions: {
-          args: ['--disable-web-security', '--start-maximized'],
-          /* --auto-open-devtools-for-tabs option is used to open a test with Network tab for debugging. It can help in analyzing network requests and responses. */
-          // args: ["--auto-open-devtools-for-tabs"],
+          args: ['--disable-web-security'],
           // channel: 'chrome',
           slowMo: 0,
           headless: false,
         },
       },
     },
-
     {
-      name: 'chromiumheadless',
-      dependencies: ['setup'],
+      name: 'chromium_headless_tablet',
+      // dependencies: ['setup'],
       use: {
-        ...devices['Desktop Chrome'],
-        viewport: { width: 1600, height: 1000 },
-        // storageState: STORAGE_STATE_LOGIN,
+        ...devices['Galaxy Tab S4'],
         launchOptions: {
           args: ['--disable-web-security'],
-          // channel: 'chrome',
-          slowMo: 0,
-          headless: true,
+          headless: false,
+        },
+      },
+    },
+    {
+      name: 'chromium_headless_mobile',
+      // dependencies: ['setup'],
+      use: {
+        ...devices['Pixel 7'],
+        launchOptions: {
+          args: ['--disable-web-security'],
+          headless: false,
         },
       },
     },
