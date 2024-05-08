@@ -7,7 +7,7 @@
 
 import { test as baseTest, expect } from '@playwright/test';
 import { setPage } from 'vasu-playwright-utils';
-import { standardUserCredentials } from '@testdata/sauce-demo-test-data';
+import { Environment } from '../playwright/utils/Environment';
 
 /**
  * A hook that runs before each test, setting the page context. The base test object with a beforeEach hook is already
@@ -15,13 +15,15 @@ import { standardUserCredentials } from '@testdata/sauce-demo-test-data';
  *
  * @param {Page} page - The page context provided by Playwright.
  */
+
 export const test = baseTest.extend<{ testHook: void }>({
   testHook: [
     async ({ page }, use) => {
-      console.log('BEFORE EACH HOOK FROM FIXTURE: ' + standardUserCredentials.username);
+      const env = new Environment();
+      await env.setup();
       setPage(page);
       await use();
-      console.log('AFTER EACH HOOK FROM FIXTURE: ' + standardUserCredentials.username);
+      await env.tearDown();
     },
     { auto: true },
   ],

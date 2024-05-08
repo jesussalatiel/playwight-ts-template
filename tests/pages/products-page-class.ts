@@ -1,9 +1,8 @@
-import { click, expectElementToBeHidden, expectElementToBeVisible } from 'vasu-playwright-utils';
-import { getLocator } from 'vasu-playwright-utils';
+import { click, expectElementToBeHidden, expectElementToBeVisible, getLocator } from 'vasu-playwright-utils';
 
 export class ProductsPage {
   private readonly productsContainer = () => getLocator(`#inventory_container`).nth(0);
-  // Defining a dynamic xpath based on the position of the Add to cart element
+
   private readonly addToCartButton = (num: number) =>
     `(//*[@class='inventory_item'])[${num}]//*[contains(@id,'add-to-cart')]`;
 

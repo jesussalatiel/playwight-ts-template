@@ -4,12 +4,17 @@
  * See https://playwright.dev/docs/test-configuration for more details.
  */
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ACTION_TIMEOUT, EXPECT_TIMEOUT, NAVIGATION_TIMEOUT, TEST_TIMEOUT } from 'vasu-playwright-utils';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig, devices } from '@playwright/test';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env' });
-import path from 'path';
+
 import os from 'os';
+import path from 'path';
+
+dotenv.config({ path: '.env' });
 
 /**
  * To run against the local environment, set the URL to your local server like 'https://localhost:9002'
@@ -107,23 +112,23 @@ export default defineConfig({
     },
 
     /** Due to different view ports in Head and Headless, created 2 projects one for head mode and the same browser for headless. */
-    {
-      name: 'chromium',
-      dependencies: ['setup'],
-      use: {
-        viewport: null,
-        // Set the storage state here if you have only one user to login.
-        // storageState: STORAGE_STATE_LOGIN,
-        launchOptions: {
-          args: ['--disable-web-security', '--start-maximized'],
-          /* --auto-open-devtools-for-tabs option is used to open a test with Network tab for debugging. It can help in analyzing network requests and responses.*/
-          // args: ["--auto-open-devtools-for-tabs"],
-          // channel: 'chrome',
-          slowMo: 0,
-          headless: true,
-        },
-      },
-    },
+    // {
+    //   name: 'chromium',
+    //   dependencies: ['setup'],
+    //   use: {
+    //     viewport: null,
+    //     // Set the storage state here if you have only one user to login.
+    //     // storageState: STORAGE_STATE_LOGIN,
+    //     launchOptions: {
+    //       args: ['--disable-web-security', '--start-maximized'],
+    //       /* --auto-open-devtools-for-tabs option is used to open a test with Network tab for debugging. It can help in analyzing network requests and responses.*/
+    //       // args: ["--auto-open-devtools-for-tabs"],
+    //       // channel: 'chrome',
+    //       slowMo: 0,
+    //       headless: true,
+    //     },
+    //   },
+    // },
     //
     // {
     //   name: 'chromiumheadless',
@@ -141,7 +146,7 @@ export default defineConfig({
     //   },
     // },
 
-    /******* Uncomment to run tests in other browsers
+    /** ***** Uncomment to run tests in other browsers
 
      {
      name: 'firefox',
@@ -181,7 +186,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
 
-  ***************/
+  ************** */
   ],
 
   /**
