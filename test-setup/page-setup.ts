@@ -5,7 +5,9 @@
  * beforeEach hook already set up. This can be used to define tests with the page context set up.
  */
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { test as baseTest, expect } from '@playwright/test';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { setPage } from 'vasu-playwright-utils';
 import { Environment } from '../playwright/utils/Environment';
 
