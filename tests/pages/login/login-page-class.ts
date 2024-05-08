@@ -1,3 +1,4 @@
+import { standardUserCredentials } from '@testdata/customers/customer-test-data';
 import {
   clickAndNavigate,
   expectElementToBeVisible,
@@ -5,8 +6,7 @@ import {
   getLocatorByRole,
   getLocatorByText,
   gotoURL,
-} from 'vasu-playwright-utils';
-import { standardUserCredentials } from '@testdata/customers/customer-test-data';
+} from '../../../playwright/utils';
 
 export class LoginPage {
   private readonly userName = `#phoneNumber`;

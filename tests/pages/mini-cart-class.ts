@@ -1,4 +1,4 @@
-import { expectElementToHaveText, getLocator } from 'vasu-playwright-utils';
+import { expectElementToHaveText, getLocator } from '../../playwright/utils';
 
 export class MiniCart {
   // We will use public modifier if we want to access the locator outside of this class

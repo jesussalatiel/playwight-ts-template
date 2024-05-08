@@ -1,6 +1,7 @@
 {
+  "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    // Language and Environment.ts
+    // Language and environment.ts
     "target": "es6", // ECMAScript(Javascript) target version to which the TypeScript code is compiled
 
     // Modules
@@ -44,6 +45,6 @@
     // Completeness
     "skipLibCheck": true // Skips the type checking of '.d.ts' files for faster compilation times
   },
-  "include": ["test-setup/**/*.ts", "tests/**/*.ts", "playwright.config.ts", ".eslintrc.json", "examples/**/*.ts"],
+  "include": ["test-setup/**/*.ts", "tests/**/*.ts", "playwright.config.ts", ".eslintrc.json", "playwright/**/*.ts"],
   "exclude": ["node_modules"] // Node_modules are excluded by default, but explicitly specified here for further exclusions as needed in your project
 }

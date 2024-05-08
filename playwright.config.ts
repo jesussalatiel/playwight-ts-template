@@ -1,15 +1,6 @@
-/**
- * playwright.config.ts: This module is responsible for configuring the Playwright test runner.
- * It includes settings for test execution, browser configuration, and environment variables.
- * See https://playwright.dev/docs/test-configuration for more details.
- */
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { ACTION_TIMEOUT, EXPECT_TIMEOUT, NAVIGATION_TIMEOUT, TEST_TIMEOUT } from 'vasu-playwright-utils';
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
-import os from 'os';
-import path from 'path';
+import { ACTION_TIMEOUT, EXPECT_TIMEOUT, NAVIGATION_TIMEOUT, TEST_TIMEOUT } from './playwright/constants/timeouts';
 
 dotenv.config({ path: '.env' });
 
@@ -18,9 +9,7 @@ dotenv.config({ path: '.env' });
  * You can override the BASE_URL by setting the URL environment variable in .env file or passing it as a command line argument.
  */
 export const BASE_URL = process.env.URL || 'https://personas.dev.oka.com.pe/';
-export const STORAGE_STATE_PATH = path.join(__dirname, 'playwright/.auth');
-const customLoggerPath = require.resolve('vasu-playwright-utils/custom-logger');
-// export const EMPTY_STORAGE_STATE = path.join(__dirname, './tests/testdata/empty-storage-state.json');
+const customLoggerPath = './playwright/setup/custom-logger';
 
 export default defineConfig({
   /**
@@ -176,19 +165,4 @@ export default defineConfig({
 
      ************** */
   ],
-
-  /**
-   * If the tests are being run on localhost, this configuration starts a web server.
-   * See https://playwright.dev/docs/test-webserver#configuring-a-web-server
-   */
-  webServer: {
-    cwd: `${os.homedir()}/repos/ui`, // You can also use the relative path to the UI repo
-    command: 'npm start ui-server', // Start the UI server
-    url: BASE_URL,
-    ignoreHTTPSErrors: true,
-    timeout: 2 * 60 * 1000,
-    reuseExistingServer: true,
-    stdout: 'pipe',
-    stderr: 'pipe',
-  },
 });

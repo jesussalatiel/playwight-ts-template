@@ -25,12 +25,12 @@
     "lint": "cross-env eslint 'tests/**/*.ts' 'test-setup/**/*.ts' 'playwright.config.ts' '.eslintrc.json' 'playwright/**/*.ts'",
     "lint:fix": "cross-env eslint 'tests/**/*.ts' 'test-setup/**/*.ts' 'playwright.config.ts' '.eslintrc.json' 'playwright/**/*.ts' --fix",
     "prettier": "cross-env prettier --write 'tests/**/*.ts' 'playwright/**/*.ts' 'test-setup/**/*.ts' 'playwright.config.ts' '.eslintrc.json' '**/*.json' '**/*.md' '!package-lock.json' '!dist/**/*' '!build/**/*'",
-    "prepare": "husky",
+    "prepare": "npx husky",
     "postinstall": "playwright install chromium"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vasu31dev/playwright-ts-template.git"
+    "url": ""
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "3.569.0",
@@ -41,9 +41,12 @@
     "@faker-js/faker": "^8.4.1",
     "@ihf-rivendell/qa": "0.3.107",
     "@playwright/test": "^1.44.0",
+    "@tsconfig/node18": "18.2.2",
+    "cross-env": "^7.0.3",
+    "dotenv-extended": "^2.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
-    "vasu-playwright-utils": "^1.14.1"
+    "eslint-config-prettier": "^9.1.0"
   },
   "husky": {
     "hooks": {
@@ -55,5 +58,9 @@
       "cross-env eslint --fix",
       "cross-env prettier --write"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "3.2.5"
   }
 }
