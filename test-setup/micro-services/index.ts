@@ -1,2 +1,2 @@
-export { leads } from './leads/LeadsService';
-export { customer } from './customers/CustomersService';
+export { leads } from './leads/leads-service';
+export { customer } from './customers/customers-service';

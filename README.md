@@ -5,31 +5,31 @@ linting, formatting, testing, and deployment scripts.
 
 ## 1. Scripts
 
-| Script            | Description                                                                                                        |
-|-------------------|--------------------------------------------------------------------------------------------------------------------|
-| **clean**         | Delete the `dist` directory to start fresh.                                                                        |
-| **co:login**      | Log in to AWS CodeArtifact to access the npm repository.                                                           |
-| **prebuild**      | Clean the `dist` directory before compiling TypeScript files.                                                      |
-| **build**         | Compile TypeScript files into JavaScript.                                                                          |
-| **validate**      | Check TypeScript types without emitting files.                                                                     |
-| **ready**         | Clean `dist`, `node_modules`, and `package-lock.json`, then log in to AWS CodeArtifact and reinstall dependencies. |
-| **test**          | Run Playwright tests using Chromium in headless mode.                                                              |
-| **test:ci**       | Run Playwright tests for continuous integration.                                                                   |
-| **test:chrome**   | Run Playwright tests in Chrome with a single worker and retries disabled.                                          |
-| **debug**         | Run Playwright tests in debug mode.                                                                                |
-| **local**         | Run Playwright tests locally in Chromium with a single worker and retries disabled.                                |
-| **test:reg**      | Run Playwright tests excluding tests marked with `@fail`.                                                          |
-| **test:smoke**    | Run Playwright tests tagged with `@smoke`.                                                                         |
-| **report**        | Show the Playwright test report.                                                                                   |
-| **ui**            | Run Playwright tests with a specific UI port configuration.                                                        |
-| **trace**         | Show the Playwright test trace.                                                                                    |
-| **record**        | Generate Playwright test scripts.                                                                                  |
-| **clear:storage** | Remove Playwright storage authentication files.                                                                    |
-| **lint**          | Lint TypeScript files using ESLint and configured rules.                                                           |
-| **lint:fix**      | Automatically fix linting issues where possible.                                                                   |
-| **prettier**      | Format code using Prettier across specified files.                                                                 |
-| **prepare**       | Set up Husky Git hooks for pre-commit actions.                                                                     |
-| **postinstall**   | Install Chromium required for Playwright.                                                                          |
+| Script            | Description                                                                                                      |
+|-------------------|------------------------------------------------------------------------------------------------------------------|
+| **clean**         | Delete the `dist` directory to start fresh.                                                                      |
+| **co:login**      | Log in to AWS CodeArtifact to access the npm repository.                                                         |
+| **prebuild**      | Clean the `dist` directory before compiling TypeScript files.                                                    |
+| **build**         | Compile TypeScript files into JavaScript.                                                                        |
+| **validate**      | Check TypeScript types without emitting files.                                                                   |
+| **ready**         | Clean `dist`, `node_modules`, and `package-lock.json`, then log in to AWS CodeArtifact and install dependencies. |
+| **test**          | Run Playwright tests using Chromium in headless mode.                                                            |
+| **test:ci**       | Run Playwright tests for continuous integration.                                                                 |
+| **test:chrome**   | Run Playwright tests in Chrome with a single worker and retries disabled.                                        |
+| **debug**         | Run Playwright tests in debug mode.                                                                              |
+| **local**         | Run Playwright tests locally in Chromium with a single worker and retries disabled.                              |
+| **test:reg**      | Run Playwright tests excluding tests marked with `@fail`.                                                        |
+| **test:smoke**    | Run Playwright tests tagged with `@smoke`.                                                                       |
+| **report**        | Show the Playwright test report.                                                                                 |
+| **ui**            | Run Playwright tests with a specific UI port configuration.                                                      |
+| **trace**         | Show the Playwright test trace.                                                                                  |
+| **record**        | Generate Playwright test scripts.                                                                                |
+| **clear:storage** | Remove Playwright storage authentication files.                                                                  |
+| **lint**          | Lint TypeScript files using ESLint and configured rules.                                                         |
+| **lint:fix**      | Automatically fix linting issues where possible.                                                                 |
+| **prettier**      | Format code using Prettier across specified files.                                                               |
+| **prepare**       | Set up Husky Git hooks for pre-commit actions.                                                                   |
+| **postinstall**   | Install Chromium required for Playwright.                                                                        |
 
 ## 2. Usage
 
