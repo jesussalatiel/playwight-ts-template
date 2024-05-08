@@ -1,7 +1,6 @@
-import { logger } from '@ihf-rivendell/qa';
+import { customer, leads } from '@micro-services';
 import { standardUserCredentials } from '@testdata/customers/customer-test-data';
-import customer from '../../test-setup/api/customers/CustomersService';
-import leads from '../../test-setup/api/leads/LeadsService';
+import { logger } from '../playwright/setup/custom-logger';
 
 export class Environment {
   async setup() {

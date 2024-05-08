@@ -1,5 +1,5 @@
 import { test as baseTest, expect } from '@playwright/test';
-import { Environment } from '../playwright/setup/environment';
+import { Environment } from './environment';
 import { setPage } from '../playwright/utils/page-utils';
 
 export const test = baseTest.extend<{ testHook: void }>({

@@ -2,7 +2,7 @@ import { QueryCommandOutput } from '@aws-sdk/lib-dynamodb';
 import { ICustomer } from '@ihf-rivendell/qa';
 import { expect } from '@playwright/test';
 import { User } from '@testdata/customers/customer-test-data';
-import { customersRepository } from '../index';
+import { customersRepository } from '../repositories/init';
 
 class CustomerService {
   async createCustomer(customer: User): Promise<void> {
@@ -101,5 +101,4 @@ class CustomerService {
   }
 }
 
-const customer = new CustomerService();
-export default customer;
+export const customer = new CustomerService();

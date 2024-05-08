@@ -1,6 +1,6 @@
 import { HeaderType, Lead } from '@ihf-rivendell/qa';
 import { expect } from '@playwright/test';
-import { leadsRepository } from '../index';
+import { leadsRepository } from '../repositories/init';
 
 class LeadsService {
   async createLead(lead: Lead): Promise<void> {
@@ -43,5 +43,4 @@ class LeadsService {
   }
 }
 
-const leads = new LeadsService();
-export default leads;
+export const leads = new LeadsService();
