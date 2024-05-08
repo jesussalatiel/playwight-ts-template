@@ -30,10 +30,7 @@ export default class CustomLogger implements Reporter {
     } else if (result.status === 'skipped') {
       logger.info(`\x1b[33mTest Case Skipped : ${test.title}\x1b[0m`); // Yellow color
     } else if (result.status === 'failed' && result.error) {
-      // Playwright inbuild reporter logs the error
-      // logger.error(
-      //   `Test Case Failed: ${test.title} Error: ${result.error.message}`,
-      // );
+      logger.error(`Test Case Failed: ${test.title} Error: ${result.error.message}`);
     }
   }
 

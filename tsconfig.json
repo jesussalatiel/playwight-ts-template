@@ -15,7 +15,7 @@
       "@fixturesetup": ["tests/fixtures/testFixtures"],
       "@pagesetup": ["test-setup/page-setup"],
       "@playwright-config": ["playwright.config"],
-      "@micro-services": ["test-setup/micro-services"],
+      "@micro-services": ["test-setup/micro-services"]
     }, // Sets up custom path mappings, enabling to import modules with convenient shorter paths
 
     // Emit
