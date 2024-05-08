@@ -1,5 +1,12 @@
-import { clickAndNavigate, fill, getLocatorByRole, gotoURL } from 'vasu-playwright-utils';
-import { standardUserCredentials } from '@testdata/oka-test-data';
+import {
+  clickAndNavigate,
+  expectElementToBeVisible,
+  fill,
+  getLocatorByRole,
+  getLocatorByText,
+  gotoURL,
+} from 'vasu-playwright-utils';
+import { standardUserCredentials } from '@testdata/customers/customer-test-data';
 
 export class LoginPage {
   private readonly userName = `#phoneNumber`;
@@ -16,5 +23,7 @@ export class LoginPage {
     await fill(this.userName, validCredentials.mobile);
     await fill(this.password, 'Done@123');
     await clickAndNavigate(this.loginButton());
+
+    await expectElementToBeVisible(getLocatorByText(`¡Bienvenido ${validCredentials}!`, { exact: true }));
   }
 }

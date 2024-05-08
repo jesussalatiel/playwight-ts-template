@@ -1,5 +1,5 @@
 import { test as baseTest } from '@pagesetup';
-import { LoginPage } from '@pages/login-page-class';
+import { LoginPage } from '@pages/login/login-page-class';
 import { ProductsPage } from '@pages/products-page-class';
 import { MiniCart } from '@pages/mini-cart-class';
 

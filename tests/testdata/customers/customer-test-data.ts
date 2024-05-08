@@ -28,7 +28,6 @@ export const standardUserCredentials: User = {
   lastName: 'Dev',
   middleName: '',
   motherLastName: 'Test',
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   email: faker.internet.email({
     provider: 'globant.com',
   }),

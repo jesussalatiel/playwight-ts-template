@@ -125,7 +125,7 @@ export default defineConfig({
           // args: ["--auto-open-devtools-for-tabs"],
           // channel: 'chrome',
           slowMo: 0,
-          headless: true,
+          headless: false,
         },
       },
     },
