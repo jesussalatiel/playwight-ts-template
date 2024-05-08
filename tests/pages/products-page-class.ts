@@ -1,4 +1,4 @@
-import { click, expectElementToBeHidden, expectElementToBeVisible, getLocator } from '../../playwright/utils';
+import { click, expectElementToBeHidden, expectElementToBeVisible, getLocator } from '../../playwright';
 
 export class ProductsPage {
   private readonly productsContainer = () => getLocator(`#inventory_container`).nth(0);

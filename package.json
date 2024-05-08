@@ -21,7 +21,6 @@
     "trace": "playwright show-trace --port 0",
     "record": "playwright codegen",
     "clear:storage": "rimraf playwright/.auth",
-    "allure": "allure generate ./allure-results --clean && allure open ./allure-report",
     "lint": "cross-env eslint 'tests/**/*.ts' 'test-setup/**/*.ts' 'playwright.config.ts' '.eslintrc.json' 'playwright/**/*.ts'",
     "lint:fix": "cross-env eslint 'tests/**/*.ts' 'test-setup/**/*.ts' 'playwright.config.ts' '.eslintrc.json' 'playwright/**/*.ts' --fix",
     "prettier": "cross-env prettier --write 'tests/**/*.ts' 'playwright/**/*.ts' 'test-setup/**/*.ts' 'playwright.config.ts' '.eslintrc.json' '**/*.json' '**/*.md' '!package-lock.json' '!dist/**/*' '!build/**/*'",
@@ -33,15 +32,15 @@
     "url": ""
   },
   "dependencies": {
-    "@aws-sdk/client-cognito-identity-provider": "3.569.0",
-    "@aws-sdk/client-dynamodb": "3.569.0",
-    "@aws-sdk/client-lambda": "3.569.0",
-    "@aws-sdk/client-s3": "3.569.0",
-    "@aws-sdk/lib-dynamodb": "3.569.0",
+    "@aws-sdk/client-cognito-identity-provider": "3.572.0",
+    "@aws-sdk/client-dynamodb": "3.572.0",
+    "@aws-sdk/client-lambda": "3.572.0",
+    "@aws-sdk/client-s3": "3.572.0",
+    "@aws-sdk/lib-dynamodb": "3.572.0",
     "@faker-js/faker": "^8.4.1",
     "@ihf-rivendell/qa": "0.3.107",
     "@playwright/test": "^1.44.0",
-    "@tsconfig/node18": "18.2.2",
+    "@tsconfig/node18": "18.2.4",
     "cross-env": "^7.0.3",
     "dotenv-extended": "^2.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -60,7 +59,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "prettier": "3.2.5"
   }
 }

@@ -1,4 +1,4 @@
-import { expectElementToHaveText, getLocator } from '../../playwright/utils';
+import { expectElementToHaveText, getLocator } from '../../playwright';
 
 export class MiniCart {
   // We will use public modifier if we want to access the locator outside of this class

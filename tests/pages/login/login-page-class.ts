@@ -6,7 +6,7 @@ import {
   getLocatorByRole,
   getLocatorByText,
   gotoURL,
-} from '../../../playwright/utils';
+} from '../../../playwright';
 
 export class LoginPage {
   private readonly userName = `#phoneNumber`;
